@@ -1,17 +1,17 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/access-request/route": "app/api/access-request/route.js",
   "/api/auth/login/route": "app/api/auth/login/route.js",
   "/api/auth/profile/route": "app/api/auth/profile/route.js",
-  "/api/auth/register/route": "app/api/auth/register/route.js",
+  "/api/payroll/route": "app/api/payroll/route.js",
   "/auth/login/page": "app/auth/login/page.js",
   "/auth/register/page": "app/auth/register/page.js",
-  "/auth/verify-email/page": "app/auth/verify-email/page.js",
   "/dashboard/access-requests/page": "app/dashboard/access-requests/page.js",
   "/dashboard/documents/page": "app/dashboard/documents/page.js",
   "/dashboard/leave/page": "app/dashboard/leave/page.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/payroll/page": "app/dashboard/payroll/page.js",
   "/dashboard/profile/page": "app/dashboard/profile/page.js",
-  "/dashboard/security/page": "app/dashboard/security/page.js",
   "/dashboard/settings/page": "app/dashboard/settings/page.js",
   "/page": "app/page.js"
 }

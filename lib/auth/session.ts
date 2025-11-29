@@ -3,7 +3,9 @@ import { createClient } from "@/lib/supabase/server"
 export interface CurrentUser {
   id: string
   email: string
-  role?: string
+  roles: string[]
+  securityLabel?: string
+  department?: string
 }
 
 export async function getCurrentUser(): Promise<CurrentUser | null> {
@@ -18,13 +20,28 @@ export async function getCurrentUser(): Promise<CurrentUser | null> {
     return null
   }
 
-  // Get user's role from profiles
-  const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).single()
+  // Get user's profile with roles from user_roles join table
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select(`
+      security_label,
+      department_id,
+      departments (name),
+      user_roles (
+        roles (name)
+      )
+    `)
+    .eq("id", user.id)
+    .single()
+
+  const roles = profile?.user_roles?.map((ur: { roles: { name: string } }) => ur.roles.name) || []
 
   return {
     id: user.id,
     email: user.email!,
-    role: profile?.role,
+    roles,
+    securityLabel: profile?.security_label,
+    department: (profile?.departments as { name: string } | null)?.name,
   }
 }
 
