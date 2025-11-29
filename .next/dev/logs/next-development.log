@@ -1,24 +1,167 @@
-[00:00:06.855] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:07.497] Server  LOG      ✓ Ready in 6.6s
-[00:00:14.347] Server  LOG      ○ Compiling / ...
-[00:00:26.173] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:08.973] Server  ERROR   Error: fetch failed
-    at context.fetch (C:\Users\gelil\OneDrive\Desktop\CSS project\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\server\web\sandbox\context.js:322:60)
-    at C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:565:23
-    at _handleRequest (C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:919:24)
-    at _request (C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:906:24)
-    at C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:4129:295
-    at SupabaseAuthClient._useSession (C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:4001:26)
-    at async SupabaseAuthClient._getUser (C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:4114:20)
-    at async C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:4101:20
-    at async C:\Users\gelil\OneDrive\Desktop\CSS project\.next\dev\server\edge\chunks\0f7e6_@supabase_auth-js_dist_module_b3e679b7._.js:3949:28 {
-  
-}
-[00:02:32.732] Server  WARN    HCAPTCHA_SECRET_KEY not configured - skipping verification
-[00:02:53.811] Server  WARN    HCAPTCHA_SECRET_KEY not configured - skipping verification
-[00:05:18.493] Server  LOG        Reload env: .env.local
-[00:05:34.805] Server  LOG        Reload env: .env
-[00:11:45.791] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:45.896] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:47.685] Server  LOG      ○ Compiling /dashboard ...
-[00:25:29.939] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.478] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:20.077] Server  LOG      ✓ Ready in 19.4s
+[00:00:23.374] Server  LOG      ○ Compiling / ...
+[00:00:27.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:48.016] Server  ERROR   Error fetching profile: {}
+[00:08:49.147] Server  ERROR   Error fetching profile: {}
+[00:09:31.894] Server  ERROR    ⨯ ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+
+
+[00:09:32.029] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:33.287] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:33.445] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:34.884] Server  ERROR    ⨯ ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+
+
+[00:09:35.117] Browser ERROR   uncaughtError: Error: ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+
+
+[00:09:37.025] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:37.025] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:40.357] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:42.032] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:42.475] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
+[00:09:42.475] Browser ERROR   ./components/dashboard/security-settings.tsx:294:43
+Parsing ecmascript source code failed
+  292 |                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+  293 |                 >
+> 294 |                   {showCurrentPassword ? \
+      |                                           ^
+  295 |
+
+Expected '</', got '<eof>'
+
+Import trace:
+  Server Component:
+    ./components/dashboard/security-settings.tsx
+    ./app/dashboard/security/page.tsx
