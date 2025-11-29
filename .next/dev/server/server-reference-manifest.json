@@ -1,0 +1,21 @@
+{
+  "node": {
+    "00f33432130bd029405d5dd0af7a3bc0dcebb0c164": {
+      "workers": {
+        "app/auth/register/page": {
+          "moduleId": "[project]/.next-internal/server/app/auth/register/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/captcha.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getCaptchaSiteKey",
+          "filename": "app/actions/captcha.ts"
+        }
+      },
+      "layer": {
+        "app/auth/register/page": "action-browser"
+      },
+      "filename": "app/actions/captcha.ts",
+      "exportedName": "getCaptchaSiteKey"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "g/ZFDTHkrsqgNUEXH/lQ3RgAOptPmUBsV3nBsymkevE="
+}

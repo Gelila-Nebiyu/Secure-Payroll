@@ -1,0 +1,67 @@
+name: Database Backup
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      backup_type:
+        description: 'Type of backup'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - incremental
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Create backup
+        env:
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+          ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
+        run: |
+          # Extract connection details
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          BACKUP_FILE="backup_${TIMESTAMP}.sql.gz"
+          
+          # Create backup with pg_dump and compress
+          pg_dump "$POSTGRES_URL" | gzip > "$BACKUP_FILE"
+          
+          # Encrypt the backup
+          openssl enc -aes-256-cbc -salt -pbkdf2 \
+            -in "$BACKUP_FILE" \
+            -out "${BACKUP_FILE}.enc" \
+            -pass env:ENCRYPTION_KEY
+          
+          # Get file size
+          FILE_SIZE=$(stat -f%z "${BACKUP_FILE}.enc" 2>/dev/null || stat -c%s "${BACKUP_FILE}.enc")
+          
+          echo "BACKUP_FILE=${BACKUP_FILE}.enc" >> $GITHUB_ENV
+          echo "FILE_SIZE=${FILE_SIZE}" >> $GITHUB_ENV
+          echo "TIMESTAMP=${TIMESTAMP}" >> $GITHUB_ENV
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup-${{ env.TIMESTAMP }}
+          path: ${{ env.BACKUP_FILE }}
+          retention-days: 30
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Backup failed! Check the logs for details."
+          # Add notification logic (email, Slack, etc.)
