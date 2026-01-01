@@ -1,0 +1,4 @@
+{
+  "name": "Sentinel Payroll Secure",
+  "description": "A high-security payroll management interface demonstrating MAC, DAC, RBAC, RuBAC, and ABAC access control models with AI-powered policy auditing."
+}
